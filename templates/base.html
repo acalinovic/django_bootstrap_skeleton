@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Boris Acalinovic for BlueBearSolutions">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <script defer src="{% static 'fontawesome/js/all.js' %}"></script>
+    <script src="{% static 'bootstrap/js/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <style>
+    html { /* Setup for sticking divs */
+        position: relative;
+        min-height: 100%;
+    }
+    body::-webkit-scrollbar, main::-webkit-scrollbar { /* WebKit for hiding scrollbars*/
+        width: 0;
+        height: 0;
+    }
+    </style>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<header class="container-fluid sticky-top bg-dark text-light pr-2 pl-2">
+    {% block header %}{% endblock %}
+</header>
+<main class="container-fluid">
+    {% block main %}{% endblock %}
+</main>
+<footer class="footer fixed-bottom bg-dark text-light py-2 mt-5">
+    {% block footer %}{% endblock %}
+</footer>
+</body>
+{% block scripts %}
+    <script>
+            console.log('jquery loaded');
+    </script>
+    <script>
+
+    </script>
+{% endblock %}
+</html>
